@@ -1,0 +1,11 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+
+ENTITY testing IS
+	PORT();
+END testing;
+
+ARCHITECTURE logic OF testing IS
+
+BEGIN
+END logic;

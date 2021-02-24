@@ -1,0 +1,622 @@
+Analysis & Synthesis report for testing
+Tue Feb 23 18:10:07 2021
+Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: ULTRASONIC_SENSOR:uss
+ 13. Parameter Settings for User Entity Instance: SERVO_MOTOR:sm
+ 14. Parameter Settings for User Entity Instance: uart:bl
+ 15. Parameter Settings for Inferred Entity Instance: SERVO_MOTOR:sm|lpm_mult:Mult0
+ 16. Parameter Settings for Inferred Entity Instance: ULTRASONIC_SENSOR:uss|lpm_divide:Div0
+ 17. lpm_mult Parameter Settings by Entity Instance
+ 18. Port Connectivity Checks: "uart:bl"
+ 19. Port Connectivity Checks: "SERVO_MOTOR:sm"
+ 20. Port Connectivity Checks: "BCD_DISPLAY:bd"
+ 21. Post-Synthesis Netlist Statistics for Top Partition
+ 22. Elapsed Time Per Partition
+ 23. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Tue Feb 23 18:10:07 2021       ;
+; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
+; Revision Name                      ; testing                                     ;
+; Top-level Entity Name              ; testing                                     ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 1,048                                       ;
+;     Total combinational functions  ; 1,022                                       ;
+;     Dedicated logic registers      ; 216                                         ;
+; Total registers                    ; 216                                         ;
+; Total pins                         ; 26                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE6E22C8        ;                    ;
+; Top-level entity name                                            ; testing            ; testing            ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                   ;
++------------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path   ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                             ; Library ;
++------------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------------------------------+---------+
+; testing.vhd                        ; yes             ; User VHDL File               ; /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/projects/ultrasonic_testing/testing.vhd                        ;         ;
+; output_files/BCD_DISPLAY.vhd       ; yes             ; User VHDL File               ; /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/projects/ultrasonic_testing/output_files/BCD_DISPLAY.vhd       ;         ;
+; output_files/ULTRASONIC_SENSOR.vhd ; yes             ; User VHDL File               ; /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/projects/ultrasonic_testing/output_files/ULTRASONIC_SENSOR.vhd ;         ;
+; output_files/SERVO_MOTOR.vhd       ; yes             ; User VHDL File               ; /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/projects/ultrasonic_testing/output_files/SERVO_MOTOR.vhd       ;         ;
+; output_files/uart.vhdl             ; yes             ; User VHDL File               ; /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/projects/ultrasonic_testing/output_files/uart.vhdl             ;         ;
+; lpm_mult.tdf                       ; yes             ; Megafunction                 ; /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/libraries/megafunctions/lpm_mult.tdf                           ;         ;
+; aglobal201.inc                     ; yes             ; Megafunction                 ; /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/libraries/megafunctions/aglobal201.inc                         ;         ;
+; lpm_add_sub.inc                    ; yes             ; Megafunction                 ; /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/libraries/megafunctions/lpm_add_sub.inc                        ;         ;
+; multcore.inc                       ; yes             ; Megafunction                 ; /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/libraries/megafunctions/multcore.inc                           ;         ;
+; bypassff.inc                       ; yes             ; Megafunction                 ; /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/libraries/megafunctions/bypassff.inc                           ;         ;
+; altshift.inc                       ; yes             ; Megafunction                 ; /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/libraries/megafunctions/altshift.inc                           ;         ;
+; multcore.tdf                       ; yes             ; Megafunction                 ; /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/libraries/megafunctions/multcore.tdf                           ;         ;
+; csa_add.inc                        ; yes             ; Megafunction                 ; /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/libraries/megafunctions/csa_add.inc                            ;         ;
+; mpar_add.inc                       ; yes             ; Megafunction                 ; /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/libraries/megafunctions/mpar_add.inc                           ;         ;
+; muleabz.inc                        ; yes             ; Megafunction                 ; /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/libraries/megafunctions/muleabz.inc                            ;         ;
+; mul_lfrg.inc                       ; yes             ; Megafunction                 ; /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/libraries/megafunctions/mul_lfrg.inc                           ;         ;
+; mul_boothc.inc                     ; yes             ; Megafunction                 ; /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/libraries/megafunctions/mul_boothc.inc                         ;         ;
+; alt_ded_mult.inc                   ; yes             ; Megafunction                 ; /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/libraries/megafunctions/alt_ded_mult.inc                       ;         ;
+; alt_ded_mult_y.inc                 ; yes             ; Megafunction                 ; /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/libraries/megafunctions/alt_ded_mult_y.inc                     ;         ;
+; dffpipe.inc                        ; yes             ; Megafunction                 ; /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/libraries/megafunctions/dffpipe.inc                            ;         ;
+; mpar_add.tdf                       ; yes             ; Megafunction                 ; /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/libraries/megafunctions/mpar_add.tdf                           ;         ;
+; lpm_add_sub.tdf                    ; yes             ; Megafunction                 ; /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/libraries/megafunctions/lpm_add_sub.tdf                        ;         ;
+; addcore.inc                        ; yes             ; Megafunction                 ; /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/libraries/megafunctions/addcore.inc                            ;         ;
+; look_add.inc                       ; yes             ; Megafunction                 ; /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/libraries/megafunctions/look_add.inc                           ;         ;
+; alt_stratix_add_sub.inc            ; yes             ; Megafunction                 ; /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/libraries/megafunctions/alt_stratix_add_sub.inc                ;         ;
+; db/add_sub_mgh.tdf                 ; yes             ; Auto-Generated Megafunction  ; /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/projects/ultrasonic_testing/db/add_sub_mgh.tdf                 ;         ;
+; altshift.tdf                       ; yes             ; Megafunction                 ; /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/libraries/megafunctions/altshift.tdf                           ;         ;
+; lpm_divide.tdf                     ; yes             ; Megafunction                 ; /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/libraries/megafunctions/lpm_divide.tdf                         ;         ;
+; abs_divider.inc                    ; yes             ; Megafunction                 ; /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/libraries/megafunctions/abs_divider.inc                        ;         ;
+; sign_div_unsign.inc                ; yes             ; Megafunction                 ; /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/libraries/megafunctions/sign_div_unsign.inc                    ;         ;
+; db/lpm_divide_ikm.tdf              ; yes             ; Auto-Generated Megafunction  ; /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/projects/ultrasonic_testing/db/lpm_divide_ikm.tdf              ;         ;
+; db/sign_div_unsign_anh.tdf         ; yes             ; Auto-Generated Megafunction  ; /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/projects/ultrasonic_testing/db/sign_div_unsign_anh.tdf         ;         ;
+; db/alt_u_div_8af.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/projects/ultrasonic_testing/db/alt_u_div_8af.tdf               ;         ;
+; db/add_sub_7pc.tdf                 ; yes             ; Auto-Generated Megafunction  ; /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/projects/ultrasonic_testing/db/add_sub_7pc.tdf                 ;         ;
+; db/add_sub_8pc.tdf                 ; yes             ; Auto-Generated Megafunction  ; /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/projects/ultrasonic_testing/db/add_sub_8pc.tdf                 ;         ;
++------------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 1,048     ;
+;                                             ;           ;
+; Total combinational functions               ; 1022      ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 278       ;
+;     -- 3 input functions                    ; 279       ;
+;     -- <=2 input functions                  ; 465       ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 667       ;
+;     -- arithmetic mode                      ; 355       ;
+;                                             ;           ;
+; Total registers                             ; 216       ;
+;     -- Dedicated logic registers            ; 216       ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 26        ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 207       ;
+; Total fan-out                               ; 3557      ;
+; Average fan-out                             ; 2.76      ;
++---------------------------------------------+-----------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                             ;
++------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node                     ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                            ; Entity Name         ; Library Name ;
++------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; |testing                                       ; 1022 (32)           ; 216 (27)                  ; 0           ; 0            ; 0       ; 0         ; 26   ; 0            ; |testing                                                                                                                       ; testing             ; work         ;
+;    |BCD_DISPLAY:bd|                            ; 66 (66)             ; 20 (20)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testing|BCD_DISPLAY:bd                                                                                                        ; BCD_DISPLAY         ; work         ;
+;    |SERVO_MOTOR:sm|                            ; 95 (60)             ; 37 (37)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testing|SERVO_MOTOR:sm                                                                                                        ; SERVO_MOTOR         ; work         ;
+;       |lpm_mult:Mult0|                         ; 35 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testing|SERVO_MOTOR:sm|lpm_mult:Mult0                                                                                         ; lpm_mult            ; work         ;
+;          |multcore:mult_core|                  ; 35 (22)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testing|SERVO_MOTOR:sm|lpm_mult:Mult0|multcore:mult_core                                                                      ; multcore            ; work         ;
+;             |mpar_add:padder|                  ; 13 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testing|SERVO_MOTOR:sm|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder                                                      ; mpar_add            ; work         ;
+;                |lpm_add_sub:adder[0]|          ; 13 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testing|SERVO_MOTOR:sm|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]                                 ; lpm_add_sub         ; work         ;
+;                   |add_sub_mgh:auto_generated| ; 13 (13)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testing|SERVO_MOTOR:sm|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_mgh:auto_generated      ; add_sub_mgh         ; work         ;
+;    |ULTRASONIC_SENSOR:uss|                     ; 757 (124)           ; 66 (66)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testing|ULTRASONIC_SENSOR:uss                                                                                                 ; ULTRASONIC_SENSOR   ; work         ;
+;       |lpm_divide:Div0|                        ; 633 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testing|ULTRASONIC_SENSOR:uss|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_ikm:auto_generated|       ; 633 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testing|ULTRASONIC_SENSOR:uss|lpm_divide:Div0|lpm_divide_ikm:auto_generated                                                   ; lpm_divide_ikm      ; work         ;
+;             |sign_div_unsign_anh:divider|      ; 633 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testing|ULTRASONIC_SENSOR:uss|lpm_divide:Div0|lpm_divide_ikm:auto_generated|sign_div_unsign_anh:divider                       ; sign_div_unsign_anh ; work         ;
+;                |alt_u_div_8af:divider|         ; 633 (633)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testing|ULTRASONIC_SENSOR:uss|lpm_divide:Div0|lpm_divide_ikm:auto_generated|sign_div_unsign_anh:divider|alt_u_div_8af:divider ; alt_u_div_8af       ; work         ;
+;    |uart:bl|                                   ; 72 (72)             ; 66 (66)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testing|uart:bl                                                                                                               ; uart                ; work         ;
++------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                     ;
++---------------------------------------+------------------------------------------------+
+; Register name                         ; Reason for Removal                             ;
++---------------------------------------+------------------------------------------------+
+; SERVO_MOTOR:sm|duty_cycle[0]          ; Stuck at GND due to stuck port data_in         ;
+; ULTRASONIC_SENSOR:uss|distance[15]    ; Merged with ULTRASONIC_SENSOR:uss|distance[14] ;
+; Total Number of Removed Registers = 2 ;                                                ;
++---------------------------------------+------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 216   ;
+; Number of registers using Synchronous Clear  ; 67    ;
+; Number of registers using Synchronous Load   ; 16    ;
+; Number of registers using Asynchronous Clear ; 77    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 75    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; uart:bl|tx                              ; 1       ;
+; uart:bl|tx_busy                         ; 2       ;
+; uart:bl|tx_buffer[0]                    ; 1       ;
+; uart:bl|tx_buffer[1]                    ; 1       ;
+; uart:bl|tx_buffer[2]                    ; 1       ;
+; uart:bl|tx_buffer[3]                    ; 1       ;
+; uart:bl|tx_buffer[4]                    ; 1       ;
+; uart:bl|tx_buffer[5]                    ; 1       ;
+; uart:bl|tx_buffer[6]                    ; 1       ;
+; uart:bl|tx_buffer[7]                    ; 1       ;
+; uart:bl|tx_buffer[8]                    ; 1       ;
+; uart:bl|tx_buffer[9]                    ; 1       ;
+; zer_flag                                ; 1       ;
+; Total number of inverted registers = 13 ;         ;
++-----------------------------------------+---------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |testing|uart:bl|tx_count[3]             ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |testing|uart:bl|rx_count[0]             ;
+; 3:1                ; 24 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |testing|ULTRASONIC_SENSOR:uss|dist_r[9] ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |testing|ULTRASONIC_SENSOR:uss|done      ;
+; 3:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |testing|SERVO_MOTOR:sm|counter[0]       ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |testing|uart:bl|os_count[2]             ;
+; 256:1              ; 4 bits    ; 680 LEs       ; 48 LEs               ; 632 LEs                ; Yes        ; |testing|motors[1]~reg0                  ;
+; 256:1              ; 2 bits    ; 340 LEs       ; 4 LEs                ; 336 LEs                ; Yes        ; |testing|leds[3]~reg0                    ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |testing|uart:bl|tx_buffer[1]            ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |testing|uart:bl|tx_buffer[7]            ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |testing|BCD_DISPLAY:bd|Mux12            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULTRASONIC_SENSOR:uss ;
++----------------+-------+-------------------------------------------+
+; Parameter Name ; Value ; Type                                      ;
++----------------+-------+-------------------------------------------+
+; sensing_hz     ; 3.0   ; Signed Float                              ;
++----------------+-------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SERVO_MOTOR:sm ;
++----------------+------------+-------------------------------+
+; Parameter Name ; Value      ; Type                          ;
++----------------+------------+-------------------------------+
+; clk_hz         ; 50000000.0 ; Signed Float                  ;
+; pulse_hz       ; 50.0       ; Signed Float                  ;
+; min_pulse_us   ; 550.0      ; Signed Float                  ;
+; max_pulse_us   ; 2300.0     ; Signed Float                  ;
+; step_count     ; 256        ; Signed Integer                ;
++----------------+------------+-------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------+
+; Parameter Settings for User Entity Instance: uart:bl ;
++----------------+----------+--------------------------+
+; Parameter Name ; Value    ; Type                     ;
++----------------+----------+--------------------------+
+; clk_freq       ; 50000000 ; Signed Integer           ;
+; baud_rate      ; 9600     ; Signed Integer           ;
+; os_rate        ; 16       ; Signed Integer           ;
+; d_width        ; 8        ; Signed Integer           ;
+; parity         ; 0        ; Signed Integer           ;
+; parity_eo      ; '0'      ; Enumerated               ;
++----------------+----------+--------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: SERVO_MOTOR:sm|lpm_mult:Mult0      ;
++------------------------------------------------+--------------+---------------------+
+; Parameter Name                                 ; Value        ; Type                ;
++------------------------------------------------+--------------+---------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE      ;
+; LPM_WIDTHA                                     ; 8            ; Untyped             ;
+; LPM_WIDTHB                                     ; 9            ; Untyped             ;
+; LPM_WIDTHP                                     ; 17           ; Untyped             ;
+; LPM_WIDTHR                                     ; 17           ; Untyped             ;
+; LPM_WIDTHS                                     ; 1            ; Untyped             ;
+; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped             ;
+; LPM_PIPELINE                                   ; 0            ; Untyped             ;
+; LATENCY                                        ; 0            ; Untyped             ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped             ;
+; INPUT_B_IS_CONSTANT                            ; YES          ; Untyped             ;
+; USE_EAB                                        ; OFF          ; Untyped             ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped             ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped             ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped             ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped             ;
+; CBXI_PARAMETER                                 ; NOTHING      ; Untyped             ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped             ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped             ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped             ;
++------------------------------------------------+--------------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: ULTRASONIC_SENSOR:uss|lpm_divide:Div0 ;
++------------------------+----------------+----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                         ;
++------------------------+----------------+----------------------------------------------+
+; LPM_WIDTHN             ; 30             ; Untyped                                      ;
+; LPM_WIDTHD             ; 17             ; Untyped                                      ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                      ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                      ;
+; LPM_PIPELINE           ; 0              ; Untyped                                      ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                      ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                      ;
+; CBXI_PARAMETER         ; lpm_divide_ikm ; Untyped                                      ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                      ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                      ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                 ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                               ;
++------------------------+----------------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance                        ;
++---------------------------------------+-------------------------------+
+; Name                                  ; Value                         ;
++---------------------------------------+-------------------------------+
+; Number of entity instances            ; 1                             ;
+; Entity Instance                       ; SERVO_MOTOR:sm|lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 8                             ;
+;     -- LPM_WIDTHB                     ; 9                             ;
+;     -- LPM_WIDTHP                     ; 17                            ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                      ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                            ;
+;     -- INPUT_B_IS_CONSTANT            ; YES                           ;
+;     -- USE_EAB                        ; OFF                           ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                          ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                            ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                            ;
++---------------------------------------+-------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "uart:bl"                                                                                ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; rx_busy  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; rx_error ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------+
+; Port Connectivity Checks: "SERVO_MOTOR:sm"    ;
++-------------+-------+----------+--------------+
+; Port        ; Type  ; Severity ; Details      ;
++-------------+-------+----------+--------------+
+; position[0] ; Input ; Info     ; Stuck at GND ;
++-------------+-------+----------+--------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "BCD_DISPLAY:bd"      ;
++---------------+-------+----------+--------------+
+; Port          ; Type  ; Severity ; Details      ;
++---------------+-------+----------+--------------+
+; number[15..8] ; Input ; Info     ; Stuck at GND ;
+; number[0]     ; Input ; Info     ; Stuck at GND ;
++---------------+-------+----------+--------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 26                          ;
+; cycloneiii_ff         ; 216                         ;
+;     CLR               ; 39                          ;
+;     CLR SCLR          ; 22                          ;
+;     CLR SLD           ; 1                           ;
+;     ENA               ; 36                          ;
+;     ENA CLR           ; 15                          ;
+;     ENA SCLR          ; 24                          ;
+;     SCLR              ; 21                          ;
+;     SLD               ; 15                          ;
+;     plain             ; 43                          ;
+; cycloneiii_lcell_comb ; 1025                        ;
+;     arith             ; 355                         ;
+;         2 data inputs ; 128                         ;
+;         3 data inputs ; 227                         ;
+;     normal            ; 670                         ;
+;         0 data inputs ; 16                          ;
+;         1 data inputs ; 15                          ;
+;         2 data inputs ; 309                         ;
+;         3 data inputs ; 52                          ;
+;         4 data inputs ; 278                         ;
+;                       ;                             ;
+; Max LUT depth         ; 48.40                       ;
+; Average LUT depth     ; 27.66                       ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:03     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+    Info: Processing started: Tue Feb 23 18:09:52 2021
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off testing -c testing
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file testing.vhd
+    Info (12022): Found design unit 1: testing-logic File: /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/projects/ultrasonic_testing/testing.vhd Line: 22
+    Info (12023): Found entity 1: testing File: /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/projects/ultrasonic_testing/testing.vhd Line: 11
+Info (12021): Found 3 design units, including 1 entities, in source file output_files/BCD_DISPLAY.vhd
+    Info (12022): Found design unit 1: BCD_DISPLAY-logic File: /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/projects/ultrasonic_testing/output_files/BCD_DISPLAY.vhd Line: 12
+    Info (12022): Found design unit 2: BCD_DISPLAY_pkg File: /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/projects/ultrasonic_testing/output_files/BCD_DISPLAY.vhd Line: 115
+    Info (12023): Found entity 1: BCD_DISPLAY File: /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/projects/ultrasonic_testing/output_files/BCD_DISPLAY.vhd Line: 5
+Info (12021): Found 3 design units, including 1 entities, in source file output_files/ULTRASONIC_SENSOR.vhd
+    Info (12022): Found design unit 1: ULTRASONIC_SENSOR-logic File: /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/projects/ultrasonic_testing/output_files/ULTRASONIC_SENSOR.vhd Line: 14
+    Info (12022): Found design unit 2: ULTRASONIC_SENSOR_pkg File: /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/projects/ultrasonic_testing/output_files/ULTRASONIC_SENSOR.vhd Line: 66
+    Info (12023): Found entity 1: ULTRASONIC_SENSOR File: /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/projects/ultrasonic_testing/output_files/ULTRASONIC_SENSOR.vhd Line: 7
+Info (12021): Found 3 design units, including 1 entities, in source file output_files/SERVO_MOTOR.vhd
+    Info (12022): Found design unit 1: SERVO_MOTOR-logic File: /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/projects/ultrasonic_testing/output_files/SERVO_MOTOR.vhd Line: 19
+    Info (12022): Found design unit 2: SERVO_MOTOR_pkg File: /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/projects/ultrasonic_testing/output_files/SERVO_MOTOR.vhd Line: 91
+    Info (12023): Found entity 1: SERVO_MOTOR File: /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/projects/ultrasonic_testing/output_files/SERVO_MOTOR.vhd Line: 7
+Info (12021): Found 3 design units, including 1 entities, in source file output_files/uart.vhdl
+    Info (12022): Found design unit 1: uart-logic File: /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/projects/ultrasonic_testing/output_files/uart.vhdl Line: 47
+    Info (12022): Found design unit 2: uart_pkg File: /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/projects/ultrasonic_testing/output_files/uart.vhdl Line: 198
+    Info (12023): Found entity 1: uart File: /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/projects/ultrasonic_testing/output_files/uart.vhdl Line: 26
+Info (12127): Elaborating entity "testing" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at testing.vhd(36): object "busy" assigned a value but never read File: /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/projects/ultrasonic_testing/testing.vhd Line: 36
+Warning (10631): VHDL Process Statement warning at testing.vhd(115): inferring latch(es) for signal or variable "position", which holds its previous value in one or more paths through the process File: /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/projects/ultrasonic_testing/testing.vhd Line: 115
+Info (10041): Inferred latch for "position[0]" at testing.vhd(115) File: /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/projects/ultrasonic_testing/testing.vhd Line: 115
+Info (12128): Elaborating entity "ULTRASONIC_SENSOR" for hierarchy "ULTRASONIC_SENSOR:uss" File: /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/projects/ultrasonic_testing/testing.vhd Line: 48
+Info (12128): Elaborating entity "BCD_DISPLAY" for hierarchy "BCD_DISPLAY:bd" File: /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/projects/ultrasonic_testing/testing.vhd Line: 60
+Warning (10492): VHDL Process Statement warning at BCD_DISPLAY.vhd(90): signal "number" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/projects/ultrasonic_testing/output_files/BCD_DISPLAY.vhd Line: 90
+Info (12128): Elaborating entity "SERVO_MOTOR" for hierarchy "SERVO_MOTOR:sm" File: /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/projects/ultrasonic_testing/testing.vhd Line: 68
+Info (12128): Elaborating entity "uart" for hierarchy "uart:bl" File: /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/projects/ultrasonic_testing/testing.vhd Line: 82
+Warning (10492): VHDL Process Statement warning at uart.vhdl(104): signal "os_pulse" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/projects/ultrasonic_testing/output_files/uart.vhdl Line: 104
+Info (278001): Inferred 2 megafunctions from design logic
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "SERVO_MOTOR:sm|Mult0" File: /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/projects/ultrasonic_testing/output_files/SERVO_MOTOR.vhd Line: 79
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ULTRASONIC_SENSOR:uss|Div0" File: /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/projects/ultrasonic_testing/output_files/ULTRASONIC_SENSOR.vhd Line: 33
+Info (12130): Elaborated megafunction instantiation "SERVO_MOTOR:sm|lpm_mult:Mult0" File: /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/projects/ultrasonic_testing/output_files/SERVO_MOTOR.vhd Line: 79
+Info (12133): Instantiated megafunction "SERVO_MOTOR:sm|lpm_mult:Mult0" with the following parameter: File: /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/projects/ultrasonic_testing/output_files/SERVO_MOTOR.vhd Line: 79
+    Info (12134): Parameter "LPM_WIDTHA" = "8"
+    Info (12134): Parameter "LPM_WIDTHB" = "9"
+    Info (12134): Parameter "LPM_WIDTHP" = "17"
+    Info (12134): Parameter "LPM_WIDTHR" = "17"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "YES"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12131): Elaborated megafunction instantiation "SERVO_MOTOR:sm|lpm_mult:Mult0|multcore:mult_core", which is child of megafunction instantiation "SERVO_MOTOR:sm|lpm_mult:Mult0" File: /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/libraries/megafunctions/lpm_mult.tdf Line: 309
+Info (12131): Elaborated megafunction instantiation "SERVO_MOTOR:sm|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder", which is child of megafunction instantiation "SERVO_MOTOR:sm|lpm_mult:Mult0" File: /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/libraries/megafunctions/multcore.tdf Line: 229
+Info (12131): Elaborated megafunction instantiation "SERVO_MOTOR:sm|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]", which is child of megafunction instantiation "SERVO_MOTOR:sm|lpm_mult:Mult0" File: /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/libraries/megafunctions/mpar_add.tdf Line: 78
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_mgh.tdf
+    Info (12023): Found entity 1: add_sub_mgh File: /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/projects/ultrasonic_testing/db/add_sub_mgh.tdf Line: 23
+Info (12131): Elaborated megafunction instantiation "SERVO_MOTOR:sm|lpm_mult:Mult0|altshift:external_latency_ffs", which is child of megafunction instantiation "SERVO_MOTOR:sm|lpm_mult:Mult0" File: /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/libraries/megafunctions/lpm_mult.tdf Line: 352
+Info (12130): Elaborated megafunction instantiation "ULTRASONIC_SENSOR:uss|lpm_divide:Div0" File: /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/projects/ultrasonic_testing/output_files/ULTRASONIC_SENSOR.vhd Line: 33
+Info (12133): Instantiated megafunction "ULTRASONIC_SENSOR:uss|lpm_divide:Div0" with the following parameter: File: /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/projects/ultrasonic_testing/output_files/ULTRASONIC_SENSOR.vhd Line: 33
+    Info (12134): Parameter "LPM_WIDTHN" = "30"
+    Info (12134): Parameter "LPM_WIDTHD" = "17"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_ikm.tdf
+    Info (12023): Found entity 1: lpm_divide_ikm File: /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/projects/ultrasonic_testing/db/lpm_divide_ikm.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_anh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_anh File: /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/projects/ultrasonic_testing/db/sign_div_unsign_anh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_8af.tdf
+    Info (12023): Found entity 1: alt_u_div_8af File: /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/projects/ultrasonic_testing/db/alt_u_div_8af.tdf Line: 27
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_7pc.tdf
+    Info (12023): Found entity 1: add_sub_7pc File: /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/projects/ultrasonic_testing/db/add_sub_7pc.tdf Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_8pc.tdf
+    Info (12023): Found entity 1: add_sub_8pc File: /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/projects/ultrasonic_testing/db/add_sub_8pc.tdf Line: 23
+Info (13000): Registers with preset signals will power-up high File: /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/projects/ultrasonic_testing/output_files/uart.vhdl Line: 44
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Info (286030): Timing-Driven Synthesis is running
+Critical Warning (18061): Ignored Power-Up Level option on the following registers
+    Critical Warning (18010): Register zer_flag will power up to High File: /home/mahmednabil/workspaces/inrtelFPGA_lite/20.1/quartus/projects/ultrasonic_testing/testing.vhd Line: 45
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 1080 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 4 input pins
+    Info (21059): Implemented 22 output pins
+    Info (21061): Implemented 1054 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 7 warnings
+    Info: Peak virtual memory: 451 megabytes
+    Info: Processing ended: Tue Feb 23 18:10:07 2021
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:29
+
+

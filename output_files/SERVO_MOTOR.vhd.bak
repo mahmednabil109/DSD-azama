@@ -1,0 +1,34 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.NUMERIC_STD.ALL;
+USE IEEE.STD_LOGIC_UNSIGNED.ALL;
+USE IEEE.MATH_REAL.ALL;
+
+ENTITY SERVO_MOTOR IS
+	GENERIC(
+		clk_hz, pluse_hz, min_pluse_us, max_pluse_us : real;
+		step_counter                                 : positive
+	);
+	PORT(
+		clk, reset : IN STD_LOGIC;
+		postion    : IN INTEGER RANGE 0 TO step_counter - 1;
+		pwm        : OUT STD_LOGIC
+	);
+END SERVO_MOTOR;
+
+ARCHITECTURE logic OF SERVO_MOTOR IS
+	
+BEGIN
+	
+END logic;
+
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.NUMERIC_STD.ALL;
+USE IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+PACKAGE SERVO_MOTOR_pkg IS
+	COMPONENT SERVO_MOTOR
+		PORT(clk, reset, servo : IN STD_LOGIC);
+	END COMPONENT;
+END SERVO_MOTOR_pkg;

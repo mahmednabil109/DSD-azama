@@ -1,0 +1,101 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'clk'
+Slack : -58.714
+TNS   : -1143.684
+
+Type  : Slow 1200mV 85C Model Setup 'ULTRASONIC_SENSOR:uss|done'
+Slack : -3.091
+TNS   : -20.042
+
+Type  : Slow 1200mV 85C Model Hold 'clk'
+Slack : 0.446
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'ULTRASONIC_SENSOR:uss|done'
+Slack : 0.453
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'ULTRASONIC_SENSOR:uss|done'
+Slack : -0.327
+TNS   : -2.943
+
+Type  : Slow 1200mV 85C Model Removal 'ULTRASONIC_SENSOR:uss|done'
+Slack : 0.678
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -310.809
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'ULTRASONIC_SENSOR:uss|done'
+Slack : -1.487
+TNS   : -13.383
+
+Type  : Slow 1200mV 0C Model Setup 'clk'
+Slack : -53.303
+TNS   : -1043.912
+
+Type  : Slow 1200mV 0C Model Setup 'ULTRASONIC_SENSOR:uss|done'
+Slack : -2.666
+TNS   : -17.176
+
+Type  : Slow 1200mV 0C Model Hold 'clk'
+Slack : 0.398
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'ULTRASONIC_SENSOR:uss|done'
+Slack : 0.402
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'ULTRASONIC_SENSOR:uss|done'
+Slack : -0.239
+TNS   : -2.151
+
+Type  : Slow 1200mV 0C Model Removal 'ULTRASONIC_SENSOR:uss|done'
+Slack : 0.550
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -310.809
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'ULTRASONIC_SENSOR:uss|done'
+Slack : -1.487
+TNS   : -13.383
+
+Type  : Fast 1200mV 0C Model Setup 'clk'
+Slack : -25.024
+TNS   : -386.677
+
+Type  : Fast 1200mV 0C Model Setup 'ULTRASONIC_SENSOR:uss|done'
+Slack : -0.795
+TNS   : -4.080
+
+Type  : Fast 1200mV 0C Model Hold 'clk'
+Slack : 0.186
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'ULTRASONIC_SENSOR:uss|done'
+Slack : 0.187
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'ULTRASONIC_SENSOR:uss|done'
+Slack : 0.380
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'ULTRASONIC_SENSOR:uss|done'
+Slack : 0.247
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -223.823
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'ULTRASONIC_SENSOR:uss|done'
+Slack : -1.000
+TNS   : -9.000
+
+------------------------------------------------------------
